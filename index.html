@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection App</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        form { margin: 20px; padding: 20px; border: 1px solid #ccc; }
+        label { margin-top: 10px; display: block; }
+        input, textarea { margin-bottom: 10px; width: 300px; }
+        input[type="button"] { width: auto; }
+    </style>
+    
+</head>
+<body>
+    <h1>Data Collection Form</h1>
+    <div id="app">
+        <div id="app-content">
+    
+            <label for="label">Label:</label>
+            <input type="text" id="label" placeholder="Enter a label"><br><br>
+    
+            <label for="description">Description (Optional):</label>
+            <textarea id="description" placeholder="Describe your submission"></textarea><br><br>
+            
+            <label for="timestamp">Timestamp:</label>
+            <input type="datetime-local" id="timestamp" value=""><br><br>
+    
+            <label for="picture">Upload a picture:</label>
+            <input type="file" id="picture" accept="image/*"><br><br>
+    
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" placeholder="Latitude">
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" placeholder="Longitude"><br><br>
+
+    
+            <button type="button" onclick="submitData()">Submit Data</button>
+            <button type="button" onclick="resetFields()">Reset Form</button>
+            <br />
+
+            <button id="get-screenshot-from-media-stream-btn" style="display:none;">Take screenshot</button>
+            <img id="screen-cam-capture" src="" style="display:none;" />
+            <button id="request-media-stream-btn">Request Cam Access and show it in video element</button>
+            <video id="video" autoplay></video>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
